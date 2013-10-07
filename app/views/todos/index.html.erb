@@ -1,0 +1,11 @@
+<h1>Shared Todo App</h1>
+<p>All your todos here</p>
+<%= form_tag("/todos/add", :method=>"post") do %> <%= text_field_tag(:todo_text) %> <%= submit_tag("Add todo", :class=>"btn") %> <% end %>
+
+  <% @todo_items.each do |t| %>
+<ul>
+  <li> <%= t.todo_item %> </li>
+</ul>
+<% end %>
+
+<a href="/todos/delete">Delete last todo</a>
